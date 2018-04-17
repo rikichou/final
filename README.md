@@ -1,4 +1,8 @@
 
+# 0, 说在前面
+
+有关该项目中所采用的策略和其他一些分析都会以开题报告的形式呈现，由于该报告的内容不适合在本notebook中显示，所以放在了同一个git仓库中的"project ayalysis.zip"压缩包中，如果需要了解的可以自行下载
+
 # 1，数据集准备
 
 
@@ -95,7 +99,7 @@ plt.show()
 ```
 
 
-![png](output_4_0.png)
+![png](output_5_0.png)
 
 
 尝试观察了几次，发现样本的特点，猫狗基本都是照片的主体，并且非常清晰，有利于优化。并且都是500*500像素以下的。
@@ -391,11 +395,11 @@ show_acc(hist)
 ```
 
 
-![png](output_19_0.png)
+![png](output_20_0.png)
 
 
 
-![png](output_19_1.png)
+![png](output_20_1.png)
 
 
 模型训练完了之后，应该对测试集进行预测，并且声称csv格式的结果文件提交kaggle，从而得到模型的得分。其实文档的格式很简单，就是对测试集的每张图片的预测结果（也就是这张图片是狗的概率，注意不是0或者1哟！是类似0.99  0.11之类的概率值！），我写了一个专门的接口函数来完成预测以及结果文件的生成
@@ -653,11 +657,11 @@ show_acc(hist)
 ```
 
 
-![png](output_30_0.png)
+![png](output_31_0.png)
 
 
 
-![png](output_30_1.png)
+![png](output_31_1.png)
 
 
 可以看到，如果按照论文上的训练方法训练效果还是很不错的，现在就来看看该模型的评分吧！
@@ -812,11 +816,11 @@ show_acc(hist)
 ```
 
 
-![png](output_41_0.png)
+![png](output_42_0.png)
 
 
 
-![png](output_41_1.png)
+![png](output_42_1.png)
 
 
 
@@ -1224,7 +1228,7 @@ plt.show()
 ```
 
 
-![png](output_68_0.png)
+![png](output_69_0.png)
 
 
 
@@ -1243,7 +1247,7 @@ plt.show()
 ```
 
 
-![png](output_69_0.png)
+![png](output_70_0.png)
 
 
 上面的结果是我在12500张猫和狗的训练集图片中找出的预测错误的图片，可以看出这些错误分类的图片可以分成几类：
@@ -1389,7 +1393,7 @@ data_clean_display(cat_name_list)
 ```
 
 
-![png](output_78_0.png)
+![png](output_79_0.png)
 
 
 上述结果中，每一张都有猫，只不过是背景复杂了点儿，或者猫的主体小了点儿，但是都不应该被清理。我感觉该模型的筛选结果不是很理想，所以我不打算使用它的结果
@@ -1411,7 +1415,7 @@ data_clean_display(dog_name_list)
 ```
 
 
-![png](output_82_0.png)
+![png](output_83_0.png)
 
 
 # 6.2 使用resnet50进行异常值清理
@@ -1438,7 +1442,7 @@ data_clean_display(res_cat_name_list)
 ```
 
 
-![png](output_86_0.png)
+![png](output_87_0.png)
 
 
 对于resnet的狗的筛选结果，我选出来了几张我认为不利于算法学习的图片，比如3672,3216,2520
@@ -1458,7 +1462,7 @@ data_clean_display(res_dog_name_list)
 ```
 
 
-![png](output_89_0.png)
+![png](output_90_0.png)
 
 
 resnet-50关于dog的筛选结果非常理想，我感觉每一张图片都应该被删除掉。
@@ -1491,7 +1495,7 @@ data_clean_display(xce_cat_name_list)
 ```
 
 
-![png](output_94_0.png)
+![png](output_95_0.png)
 
 
 
@@ -1509,7 +1513,7 @@ data_clean_display(xce_dog_name_list)
 ```
 
 
-![png](output_96_0.png)
+![png](output_97_0.png)
 
 
 上述结果明显都应该被清除掉
